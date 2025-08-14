@@ -1,0 +1,253 @@
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f9fa;
+        }
+
+       /* Navbar dengan warna gradient */
+        .navbar {
+            width: 100%;
+            background: linear-gradient(45deg, #4facfe, rgb(43, 149, 241));
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 900; /* Lebih rendah dari sidebar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: margin-left 0.3s, width 0.3s;
+        }
+        .navbar h4 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .navbar .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .user-info img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        .navbar .user-info span {
+            margin-right: 15px;
+        }
+
+        /* Tombol Logout yang lebih bagus */
+        .logout-btn {
+            background: #dc3545; /* Warna merah elegan */
+            color: white;
+            border: none;
+            padding: 6px 12px; /* Padding lebih kecil agar pas */
+            border-radius: 6px; /* Sudut membulat */
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logout-btn i {
+            margin-right: 5px;
+        }
+
+        /* Hover dengan efek lebih menarik */
+        .logout-btn:hover {
+            background: #b71c1c; /* Merah lebih gelap saat hover */
+            transform: scale(1.05); /* Efek membesar sedikit */
+        }
+
+        /* Efek klik */
+        .logout-btn:active {
+            transform: scale(0.95); /* Efek mengecil saat diklik */
+        }
+
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 50px;
+            background: #343a40;
+            color: white;
+            padding-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 12px 20px;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background: #495057;
+        }
+
+        /* Tombol Toggle Sidebar */
+        .toggle-btn {
+            display: none;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            border-radius: 5px;
+        }
+
+        /* Mencegah Scroll Horizontal */
+        html, body {
+            overflow-x: hidden; /* Menghilangkan scroll horizontal */
+            max-width: 100%;
+        }
+
+        /* Perbaiki Konten */
+        .content {
+            margin-left: 200px;
+            margin-top: 100px;
+            padding: 20px;
+            width: calc(100% - 200); /* Pastikan konten menyesuaikan sidebar */
+            transition: margin-left 0.3s;
+            box-sizing: border-box; /* Hindari ukuran berlebih */
+        }
+
+        /* Atur Card Agar Tidak Melebihi Container */
+        .card {
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                top: 50px;
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .toggle-btn {
+                display: block;
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%; /* Pastikan full width di mobile */
+            }
+        }
+
+
+        /* Animasi hover pada card */
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .logout-link {
+        display: inline-block;
+        background: #dc3545;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        border: 2px solid transparent;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .logout-link i {
+        margin-right: 8px;
+    }
+
+    .logout-link:hover {
+        background: #b71c1c;
+        border: 1px solid grey;
+        transform: scale(1.05);
+    }
+
+    .logout-link:active {
+        transform: scale(0.95);
+    }
+
+    .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+        font-size: 1.5rem; /* Perbesar judul */
+    }
+
+    .card-text {
+        font-size: 2.5rem; /* Perbesar angka */
+    }
+
+    /* Judul dengan garis bawah */
+   .title {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 4px solid #007bff;
+            display: inline-block;
+        }
+
+        /* Tabel Stylish */
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead {
+            background: #007bff;
+            color: white;
+        }
+
+        .table-hover tbody tr:hover {
+            background: #f1f1f1;
+            transition: 0.3s;
+        }
+
+        .table img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+        }
+
+        
+
+            
+   
